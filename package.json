@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/Krishan00007/mean_assignment#readme",
   "dependencies": {
-    "express": "^4.17.3"
+    "express": "^4.17.3",
+    "morgan": "^1.10.0"
   }
 }
