@@ -16,6 +16,9 @@ const app = express();
 */
 const path = require('path');
 
+/* iport fs module*/
+const fs = require('fs')
+
 /*  
 *   import router module of express and store it in router variable
 */
@@ -33,14 +36,21 @@ router.get('/', function(req, res){
 //  This get function create route for home file.
 // when we type https://localhost/home we can home file response
 router.get('/home', function(req, res){
-    res.sendFile(path.join(__dirname,'../views/Home.html'))
+   res.sendFile(path.join(__dirname,'../views/Home.html'));
 });
+
 
 //  This get function create route for About file
 // when we type https://localhost/about we can About file response
 router.get('/about', function(req, res){
-    res.sendFile(path.join(__dirname,'../views/about.html'))
+    res.sendFile(path.join(__dirname,'../views/about.html'));
 });
 
+/*  Print error message on wrong routing
+*   or the path which does not exsits
+*/
+router.get('*', function(req, res){
+    res.sendFile(path.join(__dirname,'../views/error.html'));
+});
 
 module.exports = router;

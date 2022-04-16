@@ -45,12 +45,13 @@ const port = 3000;
 *   path.join() functions use to join specific path segments into one path
 */
 // Adding Bootstrap css
-app.use('/css',express.static(path.join(__dirname,'./node_modules/bootstrap/dist/css')));
+app.use('/css', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/css')));
 // Adding Bootstrap js
-app.use('/js',express.static(path.join(__dirname,'./node_modules/bootstrap/dist/js')));
+app.use('/js', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/js')));
 // Adding Jquery
-app.use('/jq',express.static(path.join(__dirname,'./node_modules/jquery/dist')));
-
+app.use('/js', express.static(path.join(__dirname, 'node_modules/jquery/dist')));
+// adding custom css of style folder
+app.use('/c_css',express.static(path.join(__dirname,'style')));
 /*
 *   Set route file middleware to use in application.
 *   Now when we type http://localhost:3000/ in bowser it get response
