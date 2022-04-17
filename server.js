@@ -32,6 +32,12 @@ const app = express().use(morgan("dev"));
 */
 const router = require('./routes/Basic_routes');
 
+/*  Set EJS as view engine 
+*   It allows to show dynamically send data
+*   from client side and shows final HTML output
+*/  // Assignment question 3 
+app.set('view engine', 'ejs');
+
 /*
 * making port variable 
 * port set at ---> 3000
@@ -56,7 +62,7 @@ app.use('/c_css',express.static(path.join(__dirname,'style')));
 *   Set route file middleware to use in application.
 *   Now when we type http://localhost:3000/ in bowser it get response
 *   from Basic_router.js file and shows corresponding output. 
-*/
+*/ // assignment question 2 
 app.use('/', router);
 
 /* 

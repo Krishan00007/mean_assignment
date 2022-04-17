@@ -17,7 +17,9 @@ const app = express();
 const path = require('path');
 
 /* iport fs module*/
-const fs = require('fs')
+const fs = require('fs');
+const req = require('express/lib/request');
+const { userInfo } = require('os');
 
 /*  
 *   import router module of express and store it in router variable
@@ -45,6 +47,24 @@ router.get('/home', function(req, res){
 router.get('/about', function(req, res){
     res.sendFile(path.join(__dirname,'../views/about.html'));
 });
+
+// assignment question 3
+/*  The router.get() function routes the HTTP GET Requests to the path 
+*   which is being specified with the callback function 
+*/
+//  This get function make route for index file
+// when we type https://localhost/ we can index file response 
+// render function used to show ejs file output
+
+var text = {
+    name : "Krishan",
+    tools : ['HTML','CSS','Javascript','Mongodb','expressJS','Nodejs','PhP','SQL']
+}
+
+router.get('/ejs', function(req, res){
+    res.render('pages/main',{text:text});
+});
+
 
 /*  Print error message on wrong routing
 *   or the path which does not exsits

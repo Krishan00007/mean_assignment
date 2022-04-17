@@ -25,6 +25,7 @@
   "homepage": "https://github.com/Krishan00007/mean_assignment#readme",
   "dependencies": {
     "bootstrap": "^5.1.3",
+    "ejs": "^3.0.2",
     "express": "^4.17.3",
     "jquery": "^3.6.0",
     "morgan": "^1.10.0"
